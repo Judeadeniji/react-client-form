@@ -1,7 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.useFormData = exports.useValidator = void 0;
-var use_validator_1 = require("./use-validator");
-Object.defineProperty(exports, "useValidator", { enumerable: true, get: function () { return use_validator_1.useValidator; } });
-var use_form_context_1 = require("./use-form-context");
-Object.defineProperty(exports, "useFormData", { enumerable: true, get: function () { return use_form_context_1.useFormData; } });
