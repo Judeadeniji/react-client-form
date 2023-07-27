@@ -1,6 +1,6 @@
-export { Form } from "./form"
+export { Form, useFormProvider, formState } from "./form"
 export { resolve } from "./utils"
-export { useValidator } from './hooks'
+export { useValidator, useFormData } from './hooks'
 export {
   isRequired,
   minLength,

@@ -1,4 +1,5 @@
-import { useReducer } from 'react';
+import { useReducer, useContext } from 'react';
+import { FormContext } from "../form";
 
 export type ValidatorFn = (value: string) => string | undefined;
 
@@ -86,6 +87,13 @@ function formReducer(state: FormState, action: FormAction): FormState {
 }
 
 export function useValidator(initialState: ValidationErrors, _validators: Validators) {
+  
+  const context = useContext(FormContext);
+
+  if (!context && context != null) {
+    throw new Error("useFormContext must be used within a FormProvider");
+  }
+  
   const [formState, dispatch] = useReducer(formReducer, {
     fields: Object.keys(initialState).reduce((acc, field) => {
       acc[field] = {
